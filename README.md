@@ -1,7 +1,7 @@
 # Product Questions
 
 #### Distinctiveness and Complexity
-The project is building and changing the idea intially created by me as the final project for CS50. The idea has been modified, with the biggest change of core value to users: from access to the full database of questions, to the answering of concrete problem of users - having handy list of product question for specific meeting/interview/survey. That is why the project moved from presenting full database of product questions to generating Sets of Product Questions, which might be stored and reused. In order to create them I:
+The project is building and changing the idea intially created by me for the final project for CS50. The idea has been modified, with the biggest change of core value to users: from access to the full database of questions, to the answering of concrete problem of users - having handy list of product question for specific meeting/interview/survey. That is why the project moved from presenting full database of product questions to generating Sets of Product Questions, which might be stored and reused. In order to create them I:
 1. Ask user to specify concrete need - what kind of question she/he is looking, why he/she wants to ask it, to whom, and when.
 2. Based on the database (now not public anymore), I select suitable questions based on 1:1 categorisation and random selection amongst already suitable questions. 
 3. I present them to the user.
