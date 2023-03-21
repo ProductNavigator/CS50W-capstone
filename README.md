@@ -67,10 +67,10 @@ Key models:
 5. Hall of Fame - entries presented to users in the Hall of Fame, currenty inly manually added via Django Admin
 
 Supporting models - all are related to Question:
-> Type - type of the questions.
-> Why - goal of the questions. 
-> Who - who will be asked.
-> When - When this question will be asked.
+- Type - type of the questions.
+- Why - goal of the questions. 
+- Who - who will be asked.
+- When - When this question will be asked.
 
 #### >> PQ application 
 
@@ -87,12 +87,12 @@ Defines the possible options in the Django Admin
 Defines and manages all views served based on requests to urls. It defines POST as well as GET for all routes.
 
 Main viewes: 
-> index - Mainpage 
-> login, logout, register - Managing users authentication 
-> generate - Displays form to generate product questions sets. Generates product questions set based on user POST requests. 
-> set - presensts Product Question Set to the user 
-> user - presents user with a list of all his Product Question sets
-> halloffame - presents Hall of Fame 
+- index - Mainpage 
+- login, logout, register - Managing users authentication 
+- generate - Displays form to generate product questions sets. Generates product questions set based on user POST requests. 
+- set - presensts Product Question Set to the user 
+- user - presents user with a list of all his Product Question sets
+- halloffame - presents Hall of Fame 
 
 
 #### >>>Templates
