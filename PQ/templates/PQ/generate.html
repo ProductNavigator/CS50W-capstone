@@ -1,0 +1,43 @@
+{% extends "PQ/layout.html" %}
+
+{% block body %}
+
+<div>
+    <link href="static/PQ/styles.css" rel="stylesheet">
+
+    <div class="usercontainerhof">
+        <div class="titlewhite">
+            Generate set<span class="spanincolumns">.</span>
+        </div>
+
+        <div class="texttophof fw-lighter">
+            As a product manager, owner, or lead, your task is to ask the correct questions.
+            To help you with that we have built the biggest database of product questions, available at a click of a mouse.
+        </div>
+        
+        <form id="formindex" action="{% url 'generate' %}" method="post">
+        
+        
+            {{form}}
+
+            {% csrf_token %}
+
+                </div>
+                <div class="buttongeneratediv">
+                <button type="submit" class="noborder button3 btn btn-outline-primary"> Generate your set of <br> Product Questions
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f16b0e" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </button>
+                </div>
+
+            </div>
+        </form>
+        </div>
+            
+    </div>
+
+</div>
+
+
+{% endblock %}

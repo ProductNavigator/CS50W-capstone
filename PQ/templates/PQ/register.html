@@ -1,0 +1,37 @@
+{% extends "PQ/layout.html" %}
+
+{% block body %}
+
+
+<div class="divgenerate1">
+    <div class="title2generate">
+        <div class="titlewhite">
+            Register<span class="spanincolumns">.</span>
+        </div>
+        {% if message %}
+            <div>{{ message }}</div>
+        {% endif %}
+
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group" style="padding-bottom: 1rem;">
+                <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+            </div>
+            <div class="form-group" style="padding-bottom: 2rem;">
+                <input class="form-control" type="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="form-group" style="padding-bottom: 1rem;">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group" style="padding-bottom: 1rem;">
+                <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Register">
+        </form>
+
+        <p class="thirdtext fw-lighter">Already have an account? <a class="spanincolumns" href="{% url 'login' %}">Log In here.</a></p>
+
+    </div>
+</div>
+
+{% endblock %}

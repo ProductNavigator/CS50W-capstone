@@ -1,0 +1,38 @@
+{% extends "PQ/layout.html" %}
+
+{% block body %}
+
+<div class="usercontainer">
+    <div class="titlewhite">
+        {{user.username}}<span class="spanincolumns">.</span>
+    </div>
+
+    <div class=" texttophof fw-lighter">
+        As a product manager, owner, or lead, your task is to ask the correct questions.
+        Use the biggest database of product questions, available at a click of a mouse.
+    </div>
+
+        {% for set in sets %}
+                <a href="{% url 'set' set.id %}">
+                    <div class="setcardsmall">
+                        <h5>Set {{set.id}}<span class="spanincolumns">.</span></h5>
+                        
+                        <div class="setgenerated">
+                            Generated on {{set.dategenerated}}
+                        </div>
+
+                        <div classs="spans">
+                            <span class="badgecolorblack badge badge-dark">{{set.type}}</span>
+
+                            <span class="badgecolorblack badge badge-dark">{{set.why}}</span>
+
+                            <span class="badgecolorblack badge badge-dark">{{set.who}}</span>
+
+                            <span class="badgecolorblack badge badge-dark">{{set.when}}</span>
+                            </div>
+                    </div>
+                </a>
+        {% endfor %}
+</div>
+
+{% endblock %}

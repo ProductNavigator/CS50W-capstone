@@ -1,0 +1,9 @@
+
+
+    <div class="multiselect">
+            {% for field in form %}
+            <div class="fieldmultiselect">
+                <p class="badgecolorblackbig badge">{{ field.label_tag }}</p>
+                {{ field.errors }}
+                {{field}}
+            {% endfor %}

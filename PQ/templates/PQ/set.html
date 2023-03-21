@@ -1,0 +1,212 @@
+{% extends "PQ/layout.html" %}
+
+{% block body %}
+
+<div class="background">
+    <div class="setcontainer">
+        <h1>{{error}}</h1>
+        
+        {% if set %}
+                <div class="setcard">
+                    <div class="titleblack">
+                        Product Questions Set {{set.id}}<span class="spanincolumns">.</span>
+                    </div>
+        
+                            <div class="setgenerated">
+                                Generated on {{set.dategenerated}}
+                            </div>
+
+                            <div class="setuser">
+                                <span class="spanincolumns">by {{set.user}}</span>
+                            </div>
+
+                        <div class="setcardsection">
+                        Types of questions:
+                        <p class="badgecolorblack badge">{{set.type}}</p>
+                        </div>
+
+                        <div class="setcardsection">
+                            Why to ask them:
+                            <p class="badgecolorblack badge ">{{set.why}}</p>
+                        </div>
+
+                        <div class="setcardsection">
+                            Who to ask:
+                            <p class="badgecolorblack badge ">{{set.who}}</p>
+                        </div>
+
+                        <div class="setcardsection">
+                            When to ask:
+                            <p class="badgecolorblack badge ">{{set.when}}</p>
+                        </div>
+                        
+                        <div class="questionscontainer">
+                            <h3>Questions:</h3>
+                            {% for question in questions %}
+                            <p class="questionhof fw-lighter">{{question}}</p>
+                            {% endfor %}
+                        </div>
+                </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% if firsttime %}
+
+{% if user.is_authenticated %}
+<!-- here is modal to add asked question -->
+
+<!--JS-->
+<script src="/static/PQ/addquestion.js"></script>
+
+        <!--ASKQUESTION MODAL-->
+        <div id="askmodal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modalbackground modal-content">
+                
+                <div class="modal-body">
+                   <!--ASK-->
+                    <div class="">
+                        <div class="modaltopspacing">
+                            <div class="modalspacing">
+                            <h2>Your question set is ready<span class="spanincolumns">.</span></h2>
+                            <p class="badgecolorblack badge">{{set.type}}</p>
+                            <p class="badgecolorblack badge ">{{set.why}}</p>
+                            <p class="badgecolorblack badge ">{{set.who}}</p>
+                            <p class="badgecolorblack badge ">{{set.when}}</p>
+                            </div>
+
+                            <div class="modalspacing">
+                            <h5>Help us to improve by typing below question you usually ask in the selected scenario<span class="spanincolumns">:</span></h5>
+                            </div>
+                            {% if message %}
+                                <div>{{ message }}</div>
+                            {% endif %}
+
+                            <!--TO BE CHANGED HERE CORRECT URL-->
+                            <form action="{% url 'set' set.id %}" method="post">
+                                {% csrf_token %}
+                                <div class="modalspacing form-group">
+                                    <input class="form-control" autofocus type="input" name="question">
+                                </div>
+                                <input class="buttonorange btn" type="submit" name="addmodalname" value="Send">
+                            </form>
+                        </div>
+                    </div>
+                <!--ASK END-->
+                    
+    
+                </div>
+                <div class="modal-footer">
+                <p class="fw-lighter"><a  type="button" id="closebutton" class="btn btn-dark">I don't want to help</a> </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--END ASK MODAL-->
+{% else %}
+
+<!-- here is modal to register -->
+    <!--JS-->
+    <script src="/static/PQ/setregister.js"></script>
+
+    <!--REGISTER MODAL-->
+    <div id="registermodal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modalbackground modal-content">
+            <div class="modal-header">
+                <h5 class="spanincolumns modal-title">Register</h5>
+            </div>
+            <div class="modal-body">
+               <!--REGISTER-->
+                <div class="">
+                    <div class="">
+                        <div class="modaltopspacing modalspacing">
+                            <h2>Your question set is read<span class="spanincolumns">.</span></h2>
+                            </div>
+                
+                        {% if message %}
+                            <div>{{ message }}</div>
+                        {% endif %}
+                
+                        <form action="{% url 'set' set.id %}" method="post">
+                            {% csrf_token %}
+                            <div class="modalspacingsmall form-group">
+                                <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+                            </div>
+                            <div class="modalspacing form-group">
+                                <input class="form-control" type="email" name="email" placeholder="Email Address">
+                            </div>
+                            <div class="modalspacingsmall form-group">
+                                <input class="form-control" type="password" name="password" placeholder="Password">
+                            </div>
+                            <div class="modalspacing form-group">
+                                <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+                            </div>
+                            <input class="buttonorange btn" name="registermodalname" value="Register" type="submit" >
+                        </form>
+                    </div>
+                </div>
+            <!--REGISTER END-->
+                
+
+            </div>
+            <div class="modal-footer">
+            <p class="">Already have an account? <button class="btn btn-dark" id="loginbutton">Log In</button> </p>
+            <p class="">Don't want to proceed? <a  type="button" href="{% url 'index' %}" class="btn btn-secondary">Cancel</a> </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--END REGISTER MODAL-->
+
+    <!--LOGIN MODAL-->
+    <div id="loginmodal" class="modal" name="loginmodalname" value="login" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modalbackground modal-content">
+            <div class="modal-body">
+               <!--LOGIN-->
+               <div class="">
+                <div class="">
+                    <div class="modal-header">
+                    <h5 class="spanincolumns modal-title">Login</h5>
+                    </div>
+                    
+                    <div class="modaltopspacing modalspacing">
+                    <h2>Your question set is read<span class="spanincolumns">.</span></h2>
+                    </div>
+                    {% if message %}
+                        <div>{{ message }}</div>
+                    {% endif %}
+        
+                    <form action="{% url 'set' set.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="modalspacingsmall form-group">
+                            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+                        </div>
+                        <div class="modalspacing form-group">
+                            <input class="form-control" type="password" name="password" placeholder="Password">
+                        </div>
+                        <input class="buttonorange btn" name="loginmodalname" value="Login" type="submit">
+                    </form>
+
+                </div>
+            </div>
+            <!--LOGIN END-->
+                
+            </div>
+            <div class="modal-footer">
+                <p class="">Don't have an account? <button class="btn btn-dark" id="registerbutton">Register</button> </p>
+                <p class="">Don't want to proceed? <a  type="button" href="{% url 'index' %}" class="btn btn-secondary">Cancel</a> </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--END LOGIN MODAL-->
+{% endif %}
+{% endif %}
+
+
+
+{% endblock %}

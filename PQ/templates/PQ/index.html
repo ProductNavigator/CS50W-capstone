@@ -1,0 +1,188 @@
+{% extends "PQ/layout.html" %}
+
+{% block body %}
+
+<!--Opening -->
+<div class="background"> 
+
+        <div class="firsttext">
+            Product people have one superpower<span class="spanincolumns">.</span>
+            <br> Asking awsome questions<span class="spanincolumns">.</span>
+        </div>
+
+        <div class="secondtext">
+            <h1><span class="animed">  </span></h1>
+        </div>
+
+        <div class="thirdtext fw-lighter">
+            As a product manager, owner, or lead, your task is to ask the correct questions.
+            <br>To help you with that we have built the biggest database of product questions, available at a click of a mouse.
+            <br><br>Specify your scenario and generate <span>instantly</span> tailored set of product questions.
+        </div>
+
+        <div class="calltoaction">
+            <a href="{% url 'generate' %}" class="button1 btn btn-outline-primary">
+                Generate set of questions
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f16b0e" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                  </svg>
+
+            </a>
+        </div>
+
+
+
+</div>
+
+<div class="div0">
+
+    <div class="iconssection">
+        <div class="icon">
+
+            <div class="icon3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-piggy-bank-fill" viewBox="0 0 16 16">
+                <path d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595Zm7.173 3.876a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199Zm-8.999-.65a.5.5 0 1 1-.276-.96A7.613 7.613 0 0 1 7.964 3.5c.763 0 1.497.11 2.18.315a.5.5 0 1 1-.287.958A6.602 6.602 0 0 0 7.964 4.5c-.64 0-1.255.09-1.826.254ZM5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/>
+              </svg>
+            </div>
+
+             <p class="titlecolumn">Free of charge</p>
+             <p class="fw-lighter">
+                Our goal is to share knowledge with others. No paywall should stop you from tapping into the best product questions.
+        </div>
+
+        <div class="icon">
+
+            <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-heart" viewBox="0 0 16 16">
+                <path d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z"/>
+              </svg>
+            </div>
+
+            <p class="titlecolumn">Community-based</p>
+            <p class="fw-lighter">This is a not-for-profit side project run by product managers for product managers. Join the product revolution! 
+            </p>
+        </div>
+
+        <div class="icon">
+
+            <div class="icon3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-balloon-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.48 10.901C11.211 10.227 13 7.837 13 5A5 5 0 0 0 3 5c0 2.837 1.789 5.227 4.52 5.901l-.244.487a.25.25 0 1 0 .448.224l.04-.08c.009.17.024.315.051.45.068.344.208.622.448 1.102l.013.028c.212.422.182.85.05 1.246-.135.402-.366.751-.534 1.003a.25.25 0 0 0 .416.278l.004-.007c.166-.248.431-.646.588-1.115.16-.479.212-1.051-.076-1.629-.258-.515-.365-.732-.419-1.004a2.376 2.376 0 0 1-.037-.289l.008.017a.25.25 0 1 0 .448-.224l-.244-.487ZM4.352 3.356a4.004 4.004 0 0 1 3.15-2.325C7.774.997 8 1.224 8 1.5c0 .276-.226.496-.498.542-.95.162-1.749.78-2.173 1.617a.595.595 0 0 1-.52.341c-.346 0-.599-.329-.457-.644Z"/>
+            </svg>
+            </div>
+            <p class="titlecolumn">Learn from the best </p>
+            <p class="fw-lighter"> Get inspired by top product minds. In the Hall of Fame find questions used by leading product managers. </p>
+        </div>
+
+    </div>
+
+    <div class="div05">
+        <a href="mailto: contact@prodctquestions.com" class="noborder button1 btn btn-outline-primary">
+            Join PQ Community
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f16b0e" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+        </a>
+    </div>
+    
+</div>
+
+<div class="div1">
+
+    <div class="title1">
+        How it works<span class="spanincolumns">.</span>
+    </div>
+
+    <div class="iconssectionblack">
+
+        <div class="iconblack">
+
+            <div class="icon3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-1-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm7.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>
+                  </svg>
+            </div>
+
+             <p class="titlecolumnblack">Customize</p>
+             <p class="fw-lighter">
+                Specify why, who, and when you want to ask product questions. Our form allows you to do it easily, by using pre-defined categories. 
+        </div>
+
+        <div class="iconblack">
+
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-2-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm4.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306Z"/>
+                  </svg>
+            </div>
+
+            <p class="titlecolumnblack">Generate</p>
+            <p class="fw-lighter">With a click of a mouse create your custom set of questions. Algorithm will match your scenario with the biggest database of product questions.  
+            </p>
+        </div>
+
+        <div class="iconblack">
+
+            <div class="icon3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-3-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm5.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318Z"/>
+                  </svg>
+            </div>
+
+            <p class="titlecolumnblack">Download</p>
+            <p class="fw-lighter"> Log in, or register to download your questions. All your sets will be available in your account, you can come back to them anywhen you like. </p>
+        </div>
+
+
+        <div class="calltoaction2">
+            <a href="{% url 'generate' %}" class="button2 btn btn-outline-primary">
+                Generate set of questions
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f16b0e" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                  </svg>
+
+            </a>
+        </div>
+
+    </div>
+
+    <div class="div2">
+
+        <div class="title2">
+            Roadmap<span class="spanincolumns">.</span>  
+        </div>
+        <div class="textroadmap fw-lighter" style="padding-left: 5rem; padding-top: 0rem;">
+            We are developing our project to better support product people. Here is our roadmap: 
+        </div>
+        
+        <div class="titleroadmap">
+            Now<span class="spanincolumns">.</span>
+            <div class="textroadmap fw-lighter">
+            Generate unlimited sets of product questions. Store all of them under your profile. Visit the Hall of Fame to learn from the best.
+            </div>
+        </div>
+
+        <div class="titleroadmap">
+            Next<span class="spanincolumns">.</span><span class="spanincolumns">.</span>
+            <div class="textroadmap fw-lighter">
+                Give feedback to the specific set of questions. Crowdsource product questions, with active Chat-GPT vetting. 
+                </div>
+            
+        </div>
+
+        <div class="titleroadmap">
+            Later<span class="spanincolumns">.</span><span class="spanincolumns">.</span><span class="spanincolumns">.</span>
+            <div class="textroadmap fw-lighter">
+                Use chatbot to prompt questions during your calls. Machine Learning powered chatbot will actively listen to your calls and support you with spot-on suggestions. 
+            </div>
+        </div>
+    
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock %}
